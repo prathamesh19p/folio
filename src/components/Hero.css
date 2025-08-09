@@ -1,0 +1,136 @@
+.hero {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.greeting {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .greeting {
+  color: #ffffff;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: #000000;
+  font-weight: 300;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .cursor {
+  color: #ffffff;
+}
+
+.intro, .interests {
+  font-size: 1.1rem;
+  color: #333333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.8;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .intro,
+.dark-mode .interests {
+  color: #e0e0e0;
+}
+
+.music-link {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.dark-mode .music-link {
+  color: #ffffff;
+}
+
+.music-link:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+.dark-mode .music-link:hover {
+  color: #cccccc;
+}
+
+.music-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: #000000;
+  transition: width 0.3s ease;
+}
+
+.dark-mode .music-link::after {
+  background: #ffffff;
+}
+
+.music-link:hover::after {
+  width: 100%;
+}
+
+/* Typing animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .greeting {
+    font-size: 1.75rem;
+    min-height: 2.5rem;
+  }
+  
+  .intro, .interests {
+    font-size: 1rem;
+  }
+  
+  .hero {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .greeting {
+    font-size: 1.5rem;
+    min-height: 2rem;
+  }
+  
+  .intro, .interests {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
