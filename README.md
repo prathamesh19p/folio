@@ -1,4 +1,4 @@
-# Prathamesh Phalke Personal Website - React Version
+# Personal Website - React Version
 
 A modern, responsive personal website built with React.
 
