@@ -1,0 +1,154 @@
+.experience-page {
+  animation: fadeInUp 0.8s ease-out;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.experience-content h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #333;
+  font-size: 2.5rem;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #007bff, #4dabf7);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 2rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background: #007bff;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 3px #007bff;
+}
+
+.timeline-content {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #007bff;
+}
+
+.timeline-content h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.timeline-content h4 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.period {
+  color: #666;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.timeline-content p {
+  margin: 1rem 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tech-tag {
+  background: #f8f9fa;
+  color: #007bff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid #e9ecef;
+}
+
+/* Dark mode styles */
+.dark-mode .experience-content h1 {
+  color: #ffffff;
+}
+
+.dark-mode .timeline::before {
+  background: linear-gradient(to bottom, #4dabf7, #74c0fc);
+}
+
+.dark-mode .timeline-marker {
+  background: #4dabf7;
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 3px #4dabf7;
+}
+
+.dark-mode .timeline-content {
+  background: #2d2d2d;
+  border-left-color: #4dabf7;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .timeline-content h3 {
+  color: #ffffff;
+}
+
+.dark-mode .timeline-content h4 {
+  color: #4dabf7;
+}
+
+.dark-mode .period,
+.dark-mode .timeline-content p {
+  color: #cccccc;
+}
+
+.dark-mode .tech-tag {
+  background: #404040;
+  color: #4dabf7;
+  border-color: #555555;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .experience-page {
+    padding: 1rem;
+  }
+  
+  .timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline::before {
+    left: 0.75rem;
+  }
+  
+  .timeline-item {
+    padding-left: 1rem;
+  }
+}
