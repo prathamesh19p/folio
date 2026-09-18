@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './Navigation.css';
+import DarkModeToggle from './DarkModeToggle';
 
 const SECTIONS = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
-  { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
+  { id: 'profiles', label: 'Profiles' },
 ];
 
-const Navigation = () => {
+const Navigation = ({ isDarkMode, onToggleDarkMode }) => {
   const [activeSection, setActiveSection] = useState('home');
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,13 +24,20 @@ const Navigation = () => {
           }
         });
       },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
     );
 
     const elements = SECTIONS.map(({ id }) => document.getElementById(id)).filter(Boolean);
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    const onScroll = () => setIsScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const handleLinkClick = useCallback(() => {
@@ -38,17 +45,8 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav className="navigation">
-      <button
-        className="nav-toggle"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label="Toggle navigation menu"
-        aria-expanded={isOpen}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+    <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
+      <a href="#home" className="nav-brand" onClick={handleLinkClick}>PP</a>
       <ul className={`nav-list ${isOpen ? 'open' : ''}`}>
         {SECTIONS.map(({ id, label }) => (
           <li key={id} className="nav-item">
@@ -62,6 +60,19 @@ const Navigation = () => {
           </li>
         ))}
       </ul>
+      <div className="nav-actions">
+        <DarkModeToggle isDarkMode={isDarkMode} onToggle={onToggleDarkMode} />
+        <button
+          className="nav-toggle"
+          onClick={() => setIsOpen((prev) => !prev)}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isOpen}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
     </nav>
   );
 };

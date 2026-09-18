@@ -1,37 +1,30 @@
 .dark-mode-toggle {
-  position: fixed;
-  top: 2rem;
-  right: 2rem;
-  width: 48px;
-  height: 48px;
+  position: relative;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   border: 2px solid #000000;
-  background: rgba(255, 255, 255, 0.9);
+  background: transparent;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
 }
 
 .dark-mode-toggle:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.08);
 }
 
 .dark-mode-toggle.light {
   border-color: #000000;
   color: #000000;
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .dark-mode-toggle.dark {
   border-color: #ffffff;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 .dark-mode-toggle .toggle-icon {
@@ -47,42 +40,30 @@
 
 .dark-mode-toggle svg {
   transition: all 0.3s ease;
+  width: 18px;
+  height: 18px;
 }
 
 /* Dark mode styles */
 .dark-mode .dark-mode-toggle.light {
   border-color: #ffffff;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.8);
 }
 
 .dark-mode .dark-mode-toggle.dark {
   border-color: #ffffff;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.8);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .dark-mode-toggle {
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 44px;
-    height: 44px;
-  }
 }
 
 @media (max-width: 480px) {
   .dark-mode-toggle {
-    top: 1rem;
-    right: 1rem;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
   }
-  
+
   .dark-mode-toggle svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
 }
 

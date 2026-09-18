@@ -32,10 +32,22 @@
 
 .home-section {
   scroll-margin-top: 5rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .section-title {
+  color: #ffffff;
 }
 
 /* Responsive design */

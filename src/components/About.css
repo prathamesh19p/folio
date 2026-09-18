@@ -4,82 +4,37 @@
   animation: fadeInUp 0.8s ease-out both;
 }
 
-.section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  transition: color 0.3s ease;
-}
-
-.dark-mode .section-title {
-  color: #ffffff;
-}
-
 .about-text {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #333333;
-  line-height: 1.8;
-  margin-bottom: 1.25rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
   transition: color 0.3s ease;
 }
 
 .dark-mode .about-text {
-  color: #e0e0e0;
+  color: #d0d0d0;
 }
 
-.facts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.fact-card {
+.about-skills {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
 }
 
-.dark-mode .fact-card {
-  border-color: rgba(255, 255, 255, 0.15);
+.skill-pill {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 999px;
+  color: #333333;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.fact-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #777777;
-}
-
-.dark-mode .fact-label {
-  color: #999999;
-}
-
-.fact-value {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #000000;
-  transition: color 0.3s ease;
-}
-
-.dark-mode .fact-value {
-  color: #ffffff;
-}
-
-@media (max-width: 480px) {
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .about-text {
-    font-size: 1rem;
-  }
+.dark-mode .skill-pill {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: #e0e0e0;
 }
 
 @keyframes fadeInUp {

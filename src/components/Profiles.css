@@ -1,0 +1,44 @@
+.profiles {
+  margin-bottom: 4rem;
+  scroll-margin-top: 5rem;
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.profile-links a {
+  color: #000000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.profile-links a:hover {
+  border-bottom-color: #000000;
+}
+
+.dark-mode .profile-links a {
+  color: #ffffff;
+  border-bottom-color: rgba(255, 255, 255, 0.35);
+}
+
+.dark-mode .profile-links a:hover {
+  border-bottom-color: #ffffff;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

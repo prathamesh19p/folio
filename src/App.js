@@ -4,12 +4,9 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
-import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Education from './components/Education';
-import SocialLinks from './components/SocialLinks';
+import Profiles from './components/Profiles';
 import Footer from './components/Footer';
-import DarkModeToggle from './components/DarkModeToggle';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -54,19 +51,16 @@ function App() {
 
   return (
     <div className={`App ${isLoaded ? 'loaded' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
-      <DarkModeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
       <div className="container">
-        <Navigation />
+        <Navigation isDarkMode={isDarkMode} onToggleDarkMode={toggleDarkMode} />
         <main className="main-content">
           <div id="home" className="home-section">
             <Hero />
           </div>
           <About />
           <Experience />
-          <Skills />
           <Projects />
-          <Education />
-          <SocialLinks />
+          <Profiles />
         </main>
         <Footer />
       </div>

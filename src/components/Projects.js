@@ -43,12 +43,12 @@ const Projects = () => {
             <div className="project-links">
               {project.github && (
                 <a href={project.github} target="_blank" rel="noopener noreferrer">
-                  <i className="fab fa-github"></i> Code
+                  Code &rarr;
                 </a>
               )}
               {project.live && (
                 <a href={project.live} target="_blank" rel="noopener noreferrer">
-                  <i className="fas fa-arrow-up-right-from-square"></i> Live
+                  Live &rarr;
                 </a>
               )}
             </div>
