@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Header from './components/Header';
+import Navigation from './components/Navigation';
 import Hero from './components/Hero';
+import About from './components/About';
+import Experience from './components/Experience';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Education from './components/Education';
 import SocialLinks from './components/SocialLinks';
 import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
@@ -51,9 +56,16 @@ function App() {
     <div className={`App ${isLoaded ? 'loaded' : ''} ${isDarkMode ? 'dark-mode' : ''}`}>
       <DarkModeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
       <div className="container">
-        <Header />
+        <Navigation />
         <main className="main-content">
-          <Hero />
+          <div id="home" className="home-section">
+            <Hero />
+          </div>
+          <About />
+          <Experience />
+          <Skills />
+          <Projects />
+          <Education />
           <SocialLinks />
         </main>
         <Footer />

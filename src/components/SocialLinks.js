@@ -67,7 +67,9 @@ const SocialLinks = () => {
   };
 
   return (
-    <section className="social-links">
+    <section id="contact" className="social-links">
+      <h2 className="section-title">Contact</h2>
+      <p className="contact-intro">Feel free to reach out through any of these channels.</p>
       <div className="social-grid">
         {socialLinks.map((link, index) => (
           <a
