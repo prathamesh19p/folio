@@ -1,6 +1,6 @@
 {
   "short_name": "Prathamesh Phalke",
-  "name": "Prathamesh Phalke - Personal Website",
+  "name": "Prathamesh Phalke - Software Engineer",
   "icons": [
     {
       "src": "favicon.svg",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#667eea",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }
